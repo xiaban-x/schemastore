@@ -427,6 +427,7 @@
     "partial-scheduled.json", // pyproject.json[tool.scheduled]
     "partial-tox.json", // classic pyproject.json[tool.tox]
     "tox.json",
+    "edgeone.json", // catalog points to the externally hosted schema; local file is a snapshot for test validation
     "partial-eslint-plugins.json", // eslintrc.json[rules.*]
     "partial-fusion-pack-metadata.json", // minecraft-pack-mcmeta.json[fusion]
     "partial-fusion-texture-metadata.json", // minecraft-texture-mcmeta.json[fusion]

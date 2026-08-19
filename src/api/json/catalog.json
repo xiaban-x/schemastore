@@ -2971,7 +2971,7 @@
       "name": "edgeone",
       "description": "EdgeOne Makers project configuration file",
       "fileMatch": ["edgeone.json"],
-      "url": "https://www.schemastore.org/edgeone.json"
+      "url": "https://cdnstatic.tencentcs.com/edgeone/pages/docs/edgeone.schema.json"
     },
     {
       "name": "eksctl",
