@@ -1,0 +1,67 @@
+{
+  "$schema": "https://www.schemastore.org/edgeone.json",
+  "name": "my-project",
+  "main": "src/index.js",
+  "zone_id": "zone-1234567890",
+  "outputDirectory": "dist",
+  "installCommand": "npm install",
+  "buildCommand": "npm run build",
+  "nodeVersion": "20",
+  "cloudFunctions": {
+    "maxDuration": 60,
+    "regions": {
+      "mainland": ["ap-guangzhou"],
+      "overseas": ["ap-tokyo"]
+    },
+    "includeFiles": ["src/**"],
+    "externalNodeModules": ["sharp"]
+  },
+  "agents": {
+    "dir": "agents",
+    "framework": "claude-agent-sdk",
+    "runtime": "agent-node:1",
+    "timeout": 1800,
+    "idleTimeout": 300,
+    "memoryQuota": {
+      "maxMessagesPerConversation": 100
+    },
+    "includeFiles": ["agents/**"]
+  },
+  "headers": [
+    {
+      "source": "/api/*",
+      "headers": [
+        { "key": "X-Api-Version", "value": "1.0" },
+        { "key": "Cache-Control", "value": "public, max-age=3600" }
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/old",
+      "destination": "/new",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "https://backend.example.com/:path*"
+    }
+  ],
+  "caches": [
+    {
+      "source": "/static/*",
+      "cacheTtl": 86400
+    }
+  ],
+  "schedules": [
+    {
+      "name": "daily-tick",
+      "cron": "0 0 * * *",
+      "path": "/api/cron/tick",
+      "timezone": "Asia/Shanghai",
+      "method": "POST"
+    }
+  ]
+}

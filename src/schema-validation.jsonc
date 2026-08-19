@@ -65,6 +65,7 @@
     "dotnetcli.host.json",
     "drone.json",
     "drupal-recipe.json",
+    "edgeone.json",
     "enonic-xp-admin-extension-8.0.0-B4.json",
     "enonic-xp-admin-tool-8.0.0-B4.json",
     "enonic-xp-api-8.0.0-B4.json",

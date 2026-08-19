@@ -2968,6 +2968,12 @@
       }
     },
     {
+      "name": "edgeone",
+      "description": "EdgeOne Makers project configuration file",
+      "fileMatch": ["edgeone.json"],
+      "url": "https://www.schemastore.org/edgeone.json"
+    },
+    {
       "name": "eksctl",
       "description": "eksctl cluster configuration file",
       "url": "https://raw.githubusercontent.com/weaveworks/eksctl/main/pkg/apis/eksctl.io/v1alpha5/assets/schema.json"
